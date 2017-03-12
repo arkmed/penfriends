@@ -7,11 +7,17 @@
 
         {{ csrf_field() }}
 
-        <input type="file" name="experience_img" />
+        <div class="form-group">
+            <input type="file"  name="experience_img" />
+        </div>
 
-        <textarea name="message" placeholder="Your Message.."></textarea>
+        <div class="form-group">
+            <textarea class="form-control" name="message" placeholder="Your Message.."></textarea>
+        </div>
 
-        <button type="submit">SEND</button>
+
+
+        <button class="btn btn-primary" type="submit">SEND</button>
     </form>
 
     Current Product ID: {{ session()->get('product_id') }}

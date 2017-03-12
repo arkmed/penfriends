@@ -6,6 +6,8 @@ use App\Product;
 
 use App\Experience;
 
+use Illuminate\Support\Facades\Input;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -93,12 +95,16 @@ class ProductsController extends Controller
 
         ###################################
 
-        $file = $r->file('experience_img');
+        //return $image;
 
         // Validate Image
         $this->validate($r, [
             'experience_img' => 'required|image|max:5000'
         ]);
+
+        $file = $r->file('experience_img');
+
+        $image = \Image::make($file->getRealPath());
 
 
         // Store image
@@ -112,16 +118,20 @@ class ProductsController extends Controller
 
 
         //$s3 = \Storage::disk('s3');
+        $storage = \Storage::disk('uploads');
         $path = $filename;
 
 
         // Resize Image (thumbnail)
 
-        //$thumbnail = Image::make(Input::file('avatar'))->encode()->fit(500)->orientate()->stream();
-        //$thumbnail = $thumbnail->__toString();
+        $thumbnail = \Image::make(Input::file('experience_img'))->encode()->fit(500)->orientate()->stream();
+        $thumbnail = $thumbnail->__toString();
 
         // Upload thumbnail to s3
         //$s3->put($filename, $thumbnail, 'public');
+
+
+        $storage->put($filename, $thumbnail);
 
 
         #####################################################

@@ -13,6 +13,9 @@
 <nav>
     <ul>
         <li>
+            <a href="/producers">Dashboard</a>
+        </li>
+        <li>
             <a href="/logout">Logout</a>
         </li>
     </ul>

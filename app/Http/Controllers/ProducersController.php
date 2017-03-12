@@ -33,5 +33,29 @@ class ProducersController extends Controller
 
     }
 
+    public function replyExperience(Experience $experience) {
+
+        if($experience->reply) {
+            return view('producers.experience.reply', compact('experience'));
+        }
+
+        return "The user doesn't want a reply.";
+
+    }
+
+    public function sendReply(Experience $experience) {
+
+        // Validate
+
+
+        // Upload Picture (+ Python Script 2)
+
+
+        // Send Mail
+
+
+        return $experience;
+    }
+
 
 }

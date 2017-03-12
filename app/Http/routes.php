@@ -43,6 +43,10 @@ Route::get('producers', 'ProducersController@index');
 
 Route::get('producers/experience/{experience}', 'ProducersController@showExperience');
 
+Route::get('producers/experience/{experience}/reply', 'ProducersController@replyExperience');
+
+Route::post('producers/experience/{experience}/sendReply', 'ProducersController@sendReply');
+
 
 /* Tests */
 

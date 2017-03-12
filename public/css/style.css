@@ -14,6 +14,14 @@ body {
     font-size: 1.4em;
 }
 
+main {
+    width: 500px;
+    border: 1px solid #cccbcb;
+    margin: 100px auto;
+    padding: 22px;
+    border-radius: 8px;
+}
+
 #email {
     display: none;
 }

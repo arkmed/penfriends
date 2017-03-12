@@ -3,12 +3,15 @@
 @section('content')
     <h1>Entrance Page</h1>
 
-    <p>Please enter product code</p>
+    <label>Please enter product code</label>
 
-    <form method="POST" action="/entrance/submit-code">
+    <form class="form-inline" method="POST" action="/entrance/submit-code">
         {{ csrf_field() }}
 
-        <input type="text" name="product_code" />
-        <button type="submit">Submit</button>
+        <div class="form-group">
+            <input type="text" name="product_code" />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 @stop
