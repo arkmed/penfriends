@@ -192,4 +192,9 @@ class ProductsController extends Controller
 
     }
 
+    public function showImage($filename) {
+
+        return \Image::make(storage_path() . '/app/uploads/' . $filename)->response();
+    }
+
 }

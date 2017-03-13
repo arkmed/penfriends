@@ -4,13 +4,17 @@
     <h1>Show Experience</h1>
 
     <p>
+
+        <img src="/images/{{ $experience->image }}" />
+
         <b>Product:</b> {{ $experience->product->name }} <br />
+
         <b>Image:</b> {{ $experience->image }} <br />
         <b>Message:</b> {{ $experience->message }} <br />
 
 
         @if($experience->reply == true)
-            Email: {{ $experience->user_email }}
+
             <form method="get" action="/producers/experience/{{ $experience->id }}/reply">
                 <button class="btn btn-default">Reply</button>
             </form>

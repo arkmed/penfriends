@@ -48,6 +48,11 @@ Route::get('producers/experience/{experience}/reply', 'ProducersController@reply
 Route::post('producers/experience/{experience}/sendReply', 'ProducersController@sendReply');
 
 
+/***** Display Image *****/
+
+Route::get('images/{filename}', 'ProductsController@showImage');
+
+
 /* Tests */
 
 Route::get('test', 'ImagesController@test');
