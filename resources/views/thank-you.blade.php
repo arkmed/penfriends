@@ -15,6 +15,13 @@
         <input id="want_response_no" type="radio" name="want_response" value="0" checked> No<br>
 
         <button type="submit">OK</button>
+
+        @if($errors->has())
+            @foreach ($errors->all() as $error)
+                <div style="color: red">{{ $error }}</div>
+            @endforeach
+        @endif
+
     </form>
 
     Current Product ID : {{ session()->get('product_id') }} <br />

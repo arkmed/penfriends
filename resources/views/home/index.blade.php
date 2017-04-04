@@ -13,5 +13,12 @@
         </div>
 
         <button class="btn btn-primary" type="submit">Submit</button>
+
+        @if($errors->has())
+            @foreach ($errors->all() as $error)
+                <div style="color: red">{{ $error }}</div>
+            @endforeach
+        @endif
+
     </form>
 @stop

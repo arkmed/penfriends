@@ -18,6 +18,9 @@
 
 
         <button class="btn btn-primary" type="submit">SEND</button>
+
+
+
     </form>
 
     Current Product ID: {{ session()->get('product_id') }}

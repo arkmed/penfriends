@@ -38,7 +38,7 @@ class ProductsController extends Controller
             return redirect('/landing-page');
         }
 
-        return "Product Code is not valid.";
+        return redirect('/')->withErrors('Product Code does not exist.');
     }
 
     /**
@@ -173,10 +173,17 @@ class ProductsController extends Controller
         // update experience reply if yes was selected
         if($r->want_response == true) {
 
+            // validate email
+            $this->validate($r, [
+                'email' => 'required'
+            ]);
+
+
+
             // Check if email was given
-            if(empty($r->email)) {
-                return "You have to enter your email so that the producer can reply!";
-            }
+//            if(empty($r->email)) {
+//                return "You have to enter your email so that the producer can reply!";
+//            }
 
             $experienceID = session()->get('experience_id');
             $experience = Experience::find($experienceID);
