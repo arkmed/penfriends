@@ -24,6 +24,7 @@ class ProductsController extends Controller
             'product_code' => 'required|integer',
         ]);
 
+
         $code = $r->product_code;
 
         //return $this->checkCode($code);
