@@ -51,6 +51,7 @@ Route::post('producers/experience/{experience}/sendReply', 'ProducersController@
 /***** Display Image *****/
 
 Route::get('images/{filename}', 'ProductsController@showImage');
+Route::get('images/reply/{filename}', 'ProducersController@showImage');
 
 
 /* Tests */

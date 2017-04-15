@@ -66,6 +66,11 @@ return [
             'root' => storage_path('app/uploads'),
             'visibility' => 'public',
         ],
+        'replies' => [
+            'driver' => 'local',
+            'root' => public_path() . '/replies',
+        ],
+
 
     ],
 
